@@ -1,0 +1,10 @@
+const fs = require('fs');
+const html = fs.readFileSync('electricgh.html', 'utf8');
+const h1Match = html.match(/h1\{[^}]*font-family:[^;{}]+/g);
+const h2Match = html.match(/h2\{[^}]*font-family:[^;{}]+/g);
+const h4Match = html.match(/h4\{[^}]*font-family:[^;{}]+/g);
+const pMatch = html.match(/p\{[^}]*font-family:[^;{}]+/g);
+console.log('H1:', h1Match);
+console.log('H2:', h2Match);
+console.log('H4:', h4Match);
+console.log('p:', pMatch);
