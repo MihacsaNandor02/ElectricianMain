@@ -58,7 +58,7 @@ export default function StatsSection() {
             {BRAND.phone}
           </a>
           <p className="text-[16px] sm:text-[20px] font-bold tracking-tight">
-            Răspundem imediat la urgențe!
+            Sună acum pentru intervenție rapidă!
           </p>
         </div>
       </div>

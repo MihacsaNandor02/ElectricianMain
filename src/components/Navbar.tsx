@@ -1,12 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Phone, Menu, X, ChevronDown, Clock, MessageCircle } from 'lucide-react';
 import { BRAND, SERVICES } from '@/lib/constants';
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu on resize if switching to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <>
@@ -52,17 +76,18 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Actions */}
+          {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-3 relative z-[9999]">
             <a href={`tel:${BRAND.phoneRaw}`} className="p-2 text-brand-blue">
-              <Phone size={24} className="pointer-events-none" />
+              <Phone size={24} />
             </a>
-            <label
-              htmlFor="mobile-menu-toggle"
-              className="p-2 text-brand-dark cursor-pointer touch-manipulation"
+            <button
+              onClick={toggleMenu}
+              className="p-2 text-brand-dark cursor-pointer touch-manipulation focus:outline-none"
+              aria-label="Toggle menu"
             >
-              <Menu size={28} className="pointer-events-none" />
-            </label>
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
 
@@ -104,24 +129,25 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Pure CSS Mobile Menu Checkbox */}
-      <input type="checkbox" id="mobile-menu-toggle" className="peer hidden" />
-
       {/* Mobile Menu Overlay */}
-      <div className="fixed inset-0 z-[100] bg-white hidden peer-checked:flex flex-col lg:hidden animate-in fade-in duration-200">
+      <div 
+        className={`fixed inset-0 z-[100] bg-white flex flex-col lg:hidden transition-all duration-300 ${
+          isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
+        }`}
+      >
         {/* Mobile Menu Header */}
         <div className="container mx-auto px-4 py-3 flex justify-between items-center border-b border-slate-100 shrink-0">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={closeMenu}>
             <span className="text-2xl sm:text-3xl font-bold tracking-tight text-brand-dark">
               GH <span className="font-light tracking-widest text-brand-blue">ELECTRIC</span>
             </span>
           </Link>
-          <label 
-            htmlFor="mobile-menu-toggle"
+          <button 
+            onClick={closeMenu}
             className="p-2 text-brand-dark bg-slate-50 rounded-full hover:bg-slate-100 cursor-pointer"
           >
             <X size={28} />
-          </label>
+          </button>
         </div>
 
         {/* Mobile Menu Content */}
@@ -136,14 +162,13 @@ export default function Navbar() {
               {BRAND.phone}
             </a>
             <div className="flex gap-4">
-              <label htmlFor="mobile-menu-toggle" className="flex-1 cursor-pointer">
-                <Link
-                  href="/contact"
-                  className="block text-center bg-[#22c55e] py-3 text-white font-bold rounded-lg shadow-md w-full"
-                >
-                  Programare rapidă
-                </Link>
-              </label>
+              <Link
+                href="/contact"
+                onClick={closeMenu}
+                className="flex-1 text-center bg-[#22c55e] py-3 text-white font-bold rounded-lg shadow-md"
+              >
+                Programare rapidă
+              </Link>
               <a
                 href={`https://wa.me/${BRAND.whatsapp}`}
                 className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#25D366] text-white shadow-md"
@@ -154,33 +179,30 @@ export default function Navbar() {
           </div>
 
           <div className="space-y-6">
-            <label htmlFor="mobile-menu-toggle" className="block cursor-pointer">
-              <Link href="/" className="block text-lg font-bold text-brand-dark">Acasă</Link>
-            </label>
+            <Link href="/" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Acasă</Link>
+            
             <div className="space-y-4">
               <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Servicii</div>
               <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-brand-yellow">
                 {SERVICES.map((service) => (
-                  <label htmlFor="mobile-menu-toggle" key={service.slug} className="block cursor-pointer">
-                    <Link
-                      href={`/services/${service.slug}`}
-                      className="block text-brand-dark font-medium"
-                    >
-                      {service.title}
-                    </Link>
-                  </label>
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    onClick={closeMenu}
+                    className="block text-brand-dark font-medium"
+                  >
+                    {service.title}
+                  </Link>
                 ))}
               </div>
             </div>
-            <label htmlFor="mobile-menu-toggle" className="block cursor-pointer">
-              <Link href="/about" className="block text-lg font-bold text-brand-dark">Despre noi</Link>
-            </label>
-            <label htmlFor="mobile-menu-toggle" className="block cursor-pointer">
-              <Link href="/contact" className="block text-lg font-bold text-brand-dark">Contact</Link>
-            </label>
+            
+            <Link href="/about" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Despre noi</Link>
+            <Link href="/contact" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Contact</Link>
           </div>
         </div>
       </div>
     </>
   );
 }
+

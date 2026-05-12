@@ -23,10 +23,10 @@ export default function ServiceArea() {
                   <Navigation size={16} /> Arie de acoperire
                 </div>
                 <h2 className="text-[32px] sm:text-[40px] font-bold leading-tight mb-6">
-                  Echipa noastră ajunge rapid la tine!
+                  Ajung rapid la tine în tot județul Mureș!
                 </h2>
                 <p className="text-white/90 text-lg mb-8 font-medium">
-                  Ne aflăm mereu pe teren în județul Mureș. Indiferent de locație, un electrician autorizat este pregătit să intervină.
+                  Mă aflu mereu pe teren în județul Mureș. Indiferent de locație, sunt pregătit să intervin rapid pentru orice urgență electrică.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -37,12 +37,11 @@ export default function ServiceArea() {
                     </div>
                   </div>
                   <div className="flex-1 flex items-center gap-4 bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-lg">
-                    <div className="flex -space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center font-black text-brand-dark border-2 border-brand-blue shadow-sm">A</div>
-                      <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-black text-brand-dark border-2 border-brand-blue shadow-sm">M</div>
+                    <div className="flex">
+                      <div className="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center font-black text-brand-dark border-2 border-brand-blue shadow-sm">G</div>
                     </div>
                     <div className="text-sm font-bold leading-tight">
-                      Echipă <br /> pregătită
+                      Electrician <br /> pregătit
                     </div>
                   </div>
                 </div>

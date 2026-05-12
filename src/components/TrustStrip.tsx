@@ -3,7 +3,7 @@ import { Star, ShieldCheck, Zap, MapPin } from 'lucide-react';
 const triggers = [
   {
     icon: Star,
-    text: "4.8+ Google rating",
+    text: "5.0 Google rating",
     color: "text-yellow-400",
   },
   {

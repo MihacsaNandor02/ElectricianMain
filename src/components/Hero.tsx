@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_#38bdf8_0%,_transparent_100%)] opacity-10"></div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-6xl lg:max-w-7xl mx-auto">
           {/* Left Side: Content */}
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[42px] xl:text-[44px] font-bold tracking-tight text-white leading-[1.3] mb-6">
@@ -71,14 +71,14 @@ export default function Hero() {
               {/* Avatar + Name */}
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-brand-yellow flex items-center justify-center font-black text-brand-dark text-xl shadow-inner">
-                  A
+                  M
                 </div>
-                <div className="text-[20px] font-bold text-white">Andrei M.</div>
+                <div className="text-[20px] font-bold text-white">Monica Raluca</div>
               </div>
 
               {/* Text */}
-              <p className="text-[20px] sm:text-[22px] text-white italic leading-snug mb-8 font-medium">
-                "A ajuns în 40 minute și a rezolvat problema cu siguranțele care săreau mereu. Recomand cu încredere!"
+              <p className="text-[18px] sm:text-[20px] text-white italic leading-snug mb-8 font-medium">
+                "Sant foarte multumita de servicii, a venit cand a făcut programarea, preturi bune ! Foarte multumita! Recomand cu încredere!"
               </p>
 
               {/* Job Type */}

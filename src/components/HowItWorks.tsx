@@ -6,17 +6,17 @@ import { PhoneCall, Search, CheckCircle } from 'lucide-react';
 const steps = [
   {
     title: "Suni sau lași mesaj",
-    description: "Contactează-ne prin telefon sau WhatsApp pentru a ne spune problema ta.",
+    description: "Contactează-mă prin telefon sau WhatsApp pentru a-mi spune problema ta.",
     icon: PhoneCall,
   },
   {
     title: "Diagnostic rapid",
-    description: "Evaluăm situația rapid prin telefon sau direct la fața locului (on-site).",
+    description: "Evaluez situația rapid prin telefon sau direct la fața locului (on-site).",
     icon: Search,
   },
   {
     title: "Intervenție în aceeași zi",
-    description: "Rezolvăm problema eficient, cu materiale de calitate și garanție.",
+    description: "Rezolv problema eficient, cu materiale de calitate și garanție.",
     icon: CheckCircle,
   },
 ];

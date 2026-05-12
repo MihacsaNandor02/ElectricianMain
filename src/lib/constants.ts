@@ -1,8 +1,8 @@
 export const BRAND = {
   name: "GH Electric",
-  phone: "0745 123 456",
-  phoneRaw: "0745123456",
-  whatsapp: "40745123456",
+  phone: "0754 571 752",
+  phoneRaw: "0754571752",
+  whatsapp: "40754571752",
   email: "contact@electricgh.ro",
   serviceArea: "Târgu Mureș și împrejurimi",
   address: "Târgu Mureș, România",
@@ -48,8 +48,8 @@ export const SERVICES: Service[] = [
     solution: "Diagnosticăm rapid problema și intervenim pe loc pentru a restabili alimentarea în siguranță.",
     pricingExpectation: "Costul depinde de problemă, dar îl comunicăm înainte de intervenție.",
     relevantReview: {
-      author: "Andrei M.",
-      text: "A ajuns în 15 minute și a rezolvat problema cu siguranțele care săreau mereu. Recomand!",
+      author: "Adriana Marian",
+      text: "Recomand cu încredere! Profesionist! 👨‍🔧💡⚡",
       stars: 5
     },
     cta: "Sună acum",
@@ -143,8 +143,8 @@ export const SERVICES: Service[] = [
     solution: "Instalăm tablouri moderne Schneider sau Legrand, configurate corect pentru siguranță maximă.",
     pricingExpectation: "Prețul se comunică după verificarea numărului de circuite necesare.",
     relevantReview: {
-      author: "Ioana D.",
-      text: "Recomand! Mi-au explicat de ce săreau siguranțele și au pus un tablou nou foarte bine organizat.",
+      author: "Monica Raluca",
+      text: "Sant foarte multumita de servicii, a venit cand a făcut programarea, preturi bune ! Foarte multumita! Pe viitor cand mai am nevoie tot la domnul voi apela ! Recomand cu încredere!",
       stars: 5
     },
   },
@@ -166,8 +166,8 @@ export const SERVICES: Service[] = [
     solution: "Montăm orice accesoriu electric cu atenție la detalii, asigurând o funcționare perfectă.",
     pricingExpectation: "Tarife clare pentru manoperă, comunicate la telefon sau pe WhatsApp.",
     relevantReview: {
-      author: "Robert T.",
-      text: "Au montat toate corpurile de iluminat și plita în noua bucătărie. Foarte punctuali.",
+      author: "Mirabela Popa",
+      text: "Profesionist, punctual și cu mult bun simț. Recomand cu încredere!",
       stars: 5
     },
   },

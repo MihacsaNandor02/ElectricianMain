@@ -12,22 +12,22 @@ const heroReview = {
 
 const gridReviews = [
   {
-    name: "Simona L.",
+    name: "Monica Raluca",
     rating: 5,
-    jobType: "Reparație tablou",
-    text: "Au venit în 40 de minute pentru o urgență. Foarte politicoși și rapizi.",
+    jobType: "Urgență Tablou Electric",
+    text: "Sant foarte multumita de servicii, a venit cand a făcut programarea, preturi bune ! Foarte multumita! Pe viitor cand mai am nevoie tot la domnul voi apela ! Recomand cu încredere!",
   },
   {
-    name: "Ioan B.",
+    name: "Mirabela Popa",
     rating: 5,
-    jobType: "Montaj prize & LED",
-    text: "Preț corect, fără surprize. Lucrarea arată impecabil.",
+    jobType: "Reparații Electrice",
+    text: "Profesionist, punctual și cu mult bun simț. Recomand cu încredere!",
   },
   {
-    name: "Marius T.",
+    name: "Adriana Marian",
     rating: 5,
-    jobType: "Urgență siguranțe",
-    text: "Singurul electrician care a răspuns la 10 seara. Rezolvat imediat.",
+    jobType: "Instalație Electrică",
+    text: "Recomand cu încredere! Profesionist! 👨‍🔧💡⚡",
   },
 ];
 

@@ -27,21 +27,21 @@ const benefits = [
 
 const reviews = [
   {
-    name: "Andrei M.",
+    name: "Monica Raluca",
     role: "Proprietar apartament",
-    text: "A ajuns în mai puțin de o oră pentru o siguranță arsă. Foarte profesionist și rapid.",
+    text: "Sant foarte multumita de servicii, a venit cand a făcut programarea, preturi bune ! Foarte multumita! Pe viitor cand mai am nevoie tot la domnul voi apela ! Recomand cu încredere!",
     rating: 5,
   },
   {
-    name: "Elena G.",
+    name: "Mirabela Popa",
     role: "Casă rezidențială",
-    text: "Am refăcut toată instalația cu ei. Prețul a fost cel stabilit inițial și au lăsat curățenie lună.",
+    text: "Profesionist, punctual și cu mult bun simț. Recomand cu încredere!",
     rating: 5,
   },
   {
-    name: "Vasile D.",
-    role: "Spațiu comercial",
-    text: "Recomand pentru intervenții de urgență. Știu ce fac și explică tot procesul.",
+    name: "Adriana Marian",
+    role: "Apartament Târgu Mureș",
+    text: "Recomand cu încredere! Profesionist! 👨‍🔧💡⚡",
     rating: 5,
   },
 ];
