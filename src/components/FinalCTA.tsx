@@ -40,7 +40,7 @@ export default function FinalCTA() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <a
                     href={`tel:${BRAND.phoneRaw}`}
-                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#15803d] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#166534] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#5D8AA8] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#4A6D88] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                   >
                     <Phone size={20} fill="currentColor" /> {BRAND.phone}
                   </a>
@@ -130,7 +130,7 @@ export default function FinalCTA() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#22c55e] hover:bg-[#16a34a] text-white py-4 rounded-2xl text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all"
+                  className="w-full bg-[#5D8AA8] hover:bg-[#4A6D88] text-white py-4 rounded-2xl text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all"
                 >
                   Trimite Solicitarea
                 </button>

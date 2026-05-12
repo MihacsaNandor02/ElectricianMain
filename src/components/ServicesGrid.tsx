@@ -96,7 +96,7 @@ export default function ServicesGrid() {
                   <div className="mt-auto pt-6">
                     <div
                       className={`inline-flex items-center gap-2 text-[16px] font-bold transition-all ${isUrgency
-                        ? 'bg-[#15803d] text-white px-6 py-3 rounded-lg group-hover:scale-105 shadow-lg'
+                        ? 'bg-[#5D8AA8] text-white px-6 py-3 rounded-lg group-hover:scale-105 shadow-lg'
                         : 'text-brand-blue group-hover:text-brand-yellow'
                         }`}
                     >
@@ -114,7 +114,7 @@ export default function ServicesGrid() {
         <div className="mt-16 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#15803d] px-16 py-3 text-[18px] xl:text-[22px] text-white font-semibold rounded-2xl hover:bg-[#16a34a] transition-all shadow-xl hover:-translate-y-1"
+            className="inline-flex items-center justify-center bg-[#5D8AA8] px-16 py-3 text-[18px] xl:text-[22px] text-white font-semibold rounded-2xl hover:bg-[#4A6D88] transition-all shadow-xl hover:-translate-y-1"
           >
             Cere ofertă
           </a>

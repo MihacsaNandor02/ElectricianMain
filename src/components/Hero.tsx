@@ -17,7 +17,7 @@ export default function Hero() {
           {/* Left Side: Content */}
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-[32px] sm:text-[40px] lg:text-[42px] xl:text-[44px] font-bold tracking-tight text-white leading-[1.3] mb-6">
-              Electrician Autorizat <span className="text-[#22c55e]">ANRE</span> în Târgu Mureș – Intervenții Rapide <span className="text-brand-yellow">24/7</span>
+              Electrician Autorizat <span className="text-[#5D8AA8]">ANRE</span> în Târgu Mureș – Intervenții Rapide <span className="text-brand-yellow">24/7</span>
             </h1>
 
             <p className="text-[18px] sm:text-[22px] lg:text-[18px] xl:text-[22px] leading-relaxed text-white/80 font-medium mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0">
@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="flex flex-col justify-center items-center sm:flex-row  lg:justify-start gap-4 sm:gap-6 w-full lg:w-full mx-auto lg:mx-0 max-w-xs sm:max-w-xl lg:max-w-none lg:flex-nowrap">
               <a
                 href={`tel:${BRAND.phoneRaw}`}
-                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#15803d] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#166534] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#5D8AA8] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#4A6D88] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
               >
                 <Phone size={20} fill="currentColor" /> {BRAND.phone}
               </a>
@@ -42,7 +42,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-white/60 font-bold">
-              <Clock size={18} className="text-[#22c55e]" /> Răspundem în maxim 10 minute
+              <Clock size={18} className="text-[#5D8AA8]" /> Răspundem în maxim 10 minute
             </div>
           </div>
 

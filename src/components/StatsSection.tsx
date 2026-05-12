@@ -23,9 +23,9 @@ export default function StatsSection() {
   return (
     <section className="relative bg-brand-blue py-8 mt-12 text-white overflow-hidden mx-4 sm:mx-8 lg:mx-auto sm:px-6 lg:px-12 xl:px-28 lg:py-12 rounded-[50px]">
       {/* Subtle radial glow to make it feel premium */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.15)_0%,_transparent_70%)] pointer-events-none"></div>
+      <div className="absolute bg-[#5F9EA0] inset-0  pointer-events-none"></div>
 
-      <div className="container relative mx-auto px-2 sm:px-4 text-center z-10">
+      <div className="container relative mx-auto px-2 sm:px-4 text-center z-10 bg-[#5F9EA0]">
         <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold mb-4 lg:mb-2 tracking-tight leading-tight">
           Rezultate în Cifre
         </h2>
@@ -33,14 +33,14 @@ export default function StatsSection() {
           Aveți o urgență electrică? Suntem disponibili pentru intervenții de urgență în {BRAND.serviceArea}!
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-8 lg:gap-x-12 px-2 sm:px-0">
+        <div className="grid grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 gap-y-6 sm:gap-y-8 gap-x-4 sm:gap-x-8 lg:gap-x-12 px-2 sm:px-0">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center ${index === 3 ? 'sm:col-span-3 lg:col-span-1' : ''
+              className={`flex flex-col items-center bg-[#5F9EA0] ${index === 3 ? 'sm:col-span-3 lg:col-span-1' : ''
                 }`}
             >
-              <div className="text-[30px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-bold text-brand-yellow mb-1 sm:mb-2 tracking-tighter leading-none drop-shadow-sm">
+              <div className="text-[30px] sm:text-[36px]  md:text-[42px] lg:text-[48px] font-bold text-brand-yellow mb-1 sm:mb-2 tracking-tighter leading-none drop-shadow-sm">
                 {stat.number}
               </div>
               <div className="text-[14px] sm:text-[16px] lg:text-[18px] font-semibold uppercase tracking-wider sm:tracking-widest opacity-90 max-w-[160px] mx-auto leading-tight">

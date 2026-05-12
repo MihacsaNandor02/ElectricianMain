@@ -59,9 +59,9 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/contact"
-                className="relative overflow-hidden bg-[#22c55e] px-6 py-2.5 text-sm text-white font-bold rounded-full hover:scale-105 transition-all shadow-md group"
+                className="relative overflow-hidden bg-[#5D8AA8] px-6 py-2.5 text-sm text-white font-bold rounded-full hover:scale-105 transition-all shadow-md group"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#4ade80_0%,_transparent_70%)] opacity-0 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#76a5c2_0%,_transparent_70%)] opacity-0 group-hover:opacity-40 transition-opacity" />
                 <span className="relative z-10">Programare rapidă</span>
               </Link>
               <a
@@ -165,7 +165,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={closeMenu}
-                className="flex-1 text-center bg-[#22c55e] py-3 text-white font-bold rounded-lg shadow-md"
+                className="flex-1 text-center bg-[#5D8AA8] py-3 text-white font-bold rounded-lg shadow-md"
               >
                 Programare rapidă
               </Link>

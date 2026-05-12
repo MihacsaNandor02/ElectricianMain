@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div className="flex flex-col justify-center items-center sm:flex-row  lg:justify-start gap-4 sm:gap-6 w-full lg:w-full mx-auto lg:mx-0 max-w-xs sm:max-w-xl lg:max-w-none lg:flex-nowrap">
                 <a
                   href={`tel:${BRAND.phoneRaw}`}
-                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#15803d] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#166534] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#5D8AA8] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#4A6D88] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                 >
                   <Icons.Phone size={20} fill="currentColor" /> {BRAND.phone}
                 </a>
@@ -77,7 +77,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
 
               <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-white/60 font-bold">
-                <Icons.Clock size={18} className="text-[#22c55e]" /> Răspundem în maxim {BRAND.responseTime}
+                <Icons.Clock size={18} className="text-[#5D8AA8]" /> Răspundem în maxim {BRAND.responseTime}
               </div>
             </div>
 

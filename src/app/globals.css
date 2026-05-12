@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand-blue: #1F93A3;
+  --color-brand-blue: #5F9EA0;
   --color-brand-yellow: #F89D1F;
   --color-brand-yellow-hover: #EEA302;
   --color-brand-dark: #000000;
