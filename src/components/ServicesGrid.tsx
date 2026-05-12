@@ -38,7 +38,7 @@ export default function ServicesGrid() {
               <Link
                 href={href}
                 key={service.title}
-                className={`group max-w-sm sm:max-w-none w-full relative rounded-[30px] transition-all duration-300 shadow-sm hover:shadow-xl border flex flex-col h-full mx-auto ${isUrgency
+                className={`group max-w-sm sm:max-w-md lg:max-w-none w-full relative rounded-[30px] transition-all duration-300 shadow-sm hover:shadow-xl border flex flex-col h-full mx-auto ${isUrgency
                   ? 'bg-brand-dark text-white border-brand-dark z-10'
                   : 'bg-white border-slate-100'
                   }`}
