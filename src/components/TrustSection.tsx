@@ -56,7 +56,7 @@ export default function TrustSection() {
             <h2 className="text-[36px] font-bold tracking-tight text-brand-dark leading-tight mb-8 sm:text-[45px]">
               De ce să alegi <span className="text-brand-blue">GH Electric</span>?
             </h2>
-            
+
             <div className="grid grid-cols-1 gap-y-10">
               {benefits.map((benefit) => (
                 <div key={benefit.title} className="flex gap-5 group">
@@ -71,23 +71,22 @@ export default function TrustSection() {
               ))}
             </div>
           </div>
-          
+
           {/* Review Sidebar Right */}
           <div className="order-1 lg:order-2 relative">
             <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-3xl -z-10"></div>
-            
+
             <div className="space-y-6 relative">
               <div className="inline-flex items-center gap-2 bg-brand-yellow/10 text-brand-dark px-4 py-2 rounded-full text-sm font-bold mb-4">
                 <Star size={16} fill="currentColor" className="text-brand-yellow" />
                 4.9/5 pe Google Reviews
               </div>
-              
+
               {reviews.map((review, index) => (
-                <div 
-                  key={index} 
-                  className={`bg-white p-6 rounded-[20px] shadow-sm border border-slate-100 transition-all hover:shadow-md ${
-                    index === 1 ? 'lg:translate-x-6' : ''
-                  }`}
+                <div
+                  key={index}
+                  className={`bg-white p-6 rounded-[20px] shadow-sm border border-slate-100 transition-all hover:shadow-md ${index === 1 ? 'lg:translate-x-6' : ''
+                    }`}
                 >
                   <div className="flex gap-1 text-brand-yellow mb-3">
                     {[...Array(review.rating)].map((_, i) => (

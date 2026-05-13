@@ -110,7 +110,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn bg-[#5D8AA8] px-8 py-4 text-[18px] text-white font-black shadow-md hover:bg-[#4A6D88] transition-all disabled:opacity-50 mt-4 rounded-2xl"
+            className="w-full btn bg-brand-blue px-8 py-4 text-[18px] text-brand-dark font-black shadow-md hover:bg-brand-blue-deep transition-all disabled:opacity-50 mt-4 rounded-2xl"
           >
             {isSubmitting ? 'Se procesează...' : 'Solicită ofertă gratuită'}
           </button>

@@ -59,16 +59,16 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/contact"
-                className="relative overflow-hidden bg-[#5D8AA8] px-6 py-2.5 text-sm text-white font-bold rounded-full hover:scale-105 transition-all shadow-md group"
+                className="relative overflow-hidden bg-brand-blue px-6 py-2.5 text-sm text-white font-semibold text-[16px] rounded-full hover:scale-105 transition-all shadow-md group"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#76a5c2_0%,_transparent_70%)] opacity-0 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-40 transition-opacity" />
                 <span className="relative z-10">Programare rapidă</span>
               </Link>
               <a
                 href={`https://wa.me/${BRAND.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:opacity-90 transition-opacity shadow-sm"
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-whatsapp text-white hover:opacity-90 transition-opacity shadow-sm"
                 title="WhatsApp"
               >
                 <MessageCircle size={24} fill="currentColor" />
@@ -130,10 +130,9 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-[100] bg-white flex flex-col lg:hidden transition-all duration-300 ${
-          isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 z-[100] bg-white flex flex-col lg:hidden transition-all duration-300 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
+          }`}
       >
         {/* Mobile Menu Header */}
         <div className="container mx-auto px-4 py-3 flex justify-between items-center border-b border-slate-100 shrink-0">
@@ -142,7 +141,7 @@ export default function Navbar() {
               GH <span className="font-light tracking-widest text-brand-blue">ELECTRIC</span>
             </span>
           </Link>
-          <button 
+          <button
             onClick={closeMenu}
             className="p-2 text-brand-dark bg-slate-50 rounded-full hover:bg-slate-100 cursor-pointer"
           >
@@ -165,13 +164,13 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={closeMenu}
-                className="flex-1 text-center bg-[#5D8AA8] py-3 text-white font-bold rounded-lg shadow-md"
+                className="flex-1 text-center bg-brand-blue py-3 text-white font-semibold rounded-lg shadow-md"
               >
                 Programare rapidă
               </Link>
               <a
                 href={`https://wa.me/${BRAND.whatsapp}`}
-                className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#25D366] text-white shadow-md"
+                className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-whatsapp text-white shadow-md"
               >
                 <MessageCircle size={28} fill="currentColor" />
               </a>
@@ -180,7 +179,7 @@ export default function Navbar() {
 
           <div className="space-y-6">
             <Link href="/" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Acasă</Link>
-            
+
             <div className="space-y-4">
               <div className="text-sm font-bold text-slate-400 uppercase tracking-widest">Servicii</div>
               <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-brand-yellow">
@@ -196,7 +195,7 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            
+
             <Link href="/about" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Despre noi</Link>
             <Link href="/contact" onClick={closeMenu} className="block text-lg font-bold text-brand-dark">Contact</Link>
           </div>

@@ -5,10 +5,10 @@ import { BRAND, SERVICE_AREAS } from '@/lib/constants';
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="py-12 sm:py-20 bg-[#F0F0F0]">
-      <div className="container mx-auto px-4 sm:px-0">
+    <section id="contact" className="py-12 sm:py-20 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-0 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-start bg-brand-gray/30 rounded-[40px] p-8 sm:p-12 lg:p-16 lg:px-12 border border-slate-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start bg-brand-gray/30 rounded-[40px] p-8 sm:p-12 lg:p-16 lg:px-12 border border-slate-100">
 
             {/* Left Column: Info & Service Areas */}
             <div className="space-y-12">
@@ -32,15 +32,15 @@ export default function FinalCTA() {
                     </div>
                     <div className="flex items-center gap-3 text-slate-600 font-bold text-lg underline decoration-brand-blue/30 underline-offset-4 hover:decoration-brand-blue transition-all wrap">
                       <Mail size={22} className="text-brand-blue shrink-0" />
-                      <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a>
+                      <a href={`mailto:${BRAND.email}`} className="hover:text-brand-dark transition-colors">{BRAND.email}</a>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col items-center sm:items-stretch sm:flex-row gap-4 pt-4">
                   <a
                     href={`tel:${BRAND.phoneRaw}`}
-                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#5D8AA8] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#4A6D88] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-2xl shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                   >
                     <Phone size={20} fill="currentColor" /> {BRAND.phone}
                   </a>
@@ -48,7 +48,7 @@ export default function FinalCTA() {
                     href={`https://wa.me/${BRAND.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#25D366] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#166534] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-2xl shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                   >
                     <MessageCircle size={22} fill="currentColor" /> WhatsApp
                   </a>
@@ -71,9 +71,24 @@ export default function FinalCTA() {
 
             {/* Right: Detailed Form */}
             <div className="bg-transparent pt-8 sm:p-10 lg:p-0 rounded-[32px]">
-              <h3 className="text-[36px] sm:text-[48px] font-semibold text-brand-dark mb-8 text-center">
+              <h3 className="text-[36px] sm:text-[48px] font-semibold text-brand-dark mb-6 text-center leading-tight">
                 Solicitați Ofertă Gratuită
               </h3>
+
+              <div className="mb-8 grid grid-cols-2 gap-4 bg-white/50 border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div className="text-center border-r border-slate-100">
+                  <div className="text-[20px] sm:text-[32px] font-bold text-brand-blue leading-none mb-1">
+                    &lt;60 min
+                  </div>
+                  <div className="text-[14px] font-bold text-slate-500">Timp răspuns</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-[20px] sm:text-[32px] font-bold text-brand-yellow leading-none mb-1 uppercase">
+                    GRATUIT
+                  </div>
+                  <div className="text-[14px] font-bold text-slate-500">Evaluare</div>
+                </div>
+              </div>
 
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -130,27 +145,13 @@ export default function FinalCTA() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#5D8AA8] hover:bg-[#4A6D88] text-white py-4 rounded-2xl text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all"
+                  className="w-full bg-brand-blue hover:bg-brand-blue-deep text-white py-4 rounded-2xl text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all cursor-pointer"
                 >
                   Trimite Solicitarea
                 </button>
               </form>
 
-              {/* Trust Footer below form */}
-              <div className="mt-6 pt-8 border-t border-slate-100 grid grid-cols-2 gap-4">
-                <div className="text-center ">
-                  <div className="text-[20px] sm:text-[32px] font-bold text-brand-blue leading-none mb-1">
-                    &lt;60 min
-                  </div>
-                  <div className="text-[14px] font-bold text-slate-500">Timp răspuns</div>
-                </div>
-                <div className="text-center sm:text-left">
-                  <div className="text-[20px] sm:text-[32px] font-bold text-brand-yellow leading-none mb-1 uppercase">
-                    GRATUIT
-                  </div>
-                  <div className="text-[14px] font-bold text-slate-500">Evaluare</div>
-                </div>
-              </div>
+
             </div>
 
           </div>

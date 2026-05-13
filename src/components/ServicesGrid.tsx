@@ -39,12 +39,12 @@ export default function ServicesGrid() {
                 href={href}
                 key={service.title}
                 className={`group max-w-sm sm:max-w-md lg:max-w-none w-full relative rounded-[30px] transition-all duration-300 shadow-sm hover:shadow-xl border flex flex-col h-full mx-auto ${isUrgency
-                  ? 'bg-brand-dark text-white border-brand-dark z-10'
+                  ? 'bg-brand-yellow text-brand-dark border-brand-yellow z-10'
                   : 'bg-white border-slate-100'
                   }`}
               >
                 {isUrgency && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-dark text-[13px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-xl whitespace-nowrap z-30">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand- text-white text-[13px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-xl whitespace-nowrap z-30">
                     Intervenție Rapidă
                   </div>
                 )}
@@ -64,7 +64,7 @@ export default function ServicesGrid() {
                       className="absolute inset-0"
                       style={{
                         background: isUrgency
-                          ? 'linear-gradient(to bottom, transparent 40%, #000000 100%)'
+                          ? 'linear-gradient(to bottom, transparent 40%, #F59E0B 100%)'
                           : 'linear-gradient(to bottom, transparent 40%, #ffffff 100%)',
                       }}
                     />
@@ -75,7 +75,7 @@ export default function ServicesGrid() {
                     className="relative w-full aspect-[16/7] flex items-center justify-center overflow-hidden rounded-t-[30px]"
                     style={{
                       background: isUrgency
-                        ? 'linear-gradient(135deg, #1F93A3 0%, #000000 100%)'
+                        ? 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)'
                         : 'linear-gradient(135deg, #1F93A3 0%, #0f5f6a 100%)',
                     }}
                   >
@@ -85,19 +85,19 @@ export default function ServicesGrid() {
 
                 {/* Text section */}
                 <div className="flex flex-col flex-grow p-6 sm:p-8">
-                  <h3 className={`text-[22px] lg:text-[28px] font-bold mb-3 ${isUrgency ? 'text-white' : 'text-brand-dark'}`}>
+                  <h3 className={`text-[22px] lg:text-[28px] font-bold mb-3 ${isUrgency ? 'text-brand-dark' : 'text-brand-dark'}`}>
                     {service.title}
                   </h3>
 
-                  <p className={`text-[15px] sm:text-[16px] leading-relaxed mb-0 ${isUrgency ? 'text-slate-300' : 'text-slate-600'}`}>
+                  <p className={`text-[15px] sm:text-[16px] leading-relaxed mb-0 ${isUrgency ? 'text-brand-dark/80' : 'text-slate-600'}`}>
                     {service.description}
                   </p>
 
                   <div className="mt-auto pt-6">
                     <div
                       className={`inline-flex items-center gap-2 text-[16px] font-bold transition-all ${isUrgency
-                        ? 'bg-[#5D8AA8] text-white px-6 py-3 rounded-lg group-hover:scale-105 shadow-lg'
-                        : 'text-brand-blue group-hover:text-brand-yellow'
+                        ? 'bg-brand-blue text-white px-6 py-3 rounded-lg group-hover:scale-105 shadow-lg hover:bg-brand-blue-deep'
+                        : 'text-brand-blue group-hover:text-brand-blue-deep'
                         }`}
                     >
                       {isUrgency && <Phone size={18} fill="currentColor" />}
@@ -114,7 +114,7 @@ export default function ServicesGrid() {
         <div className="mt-16 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#5D8AA8] px-16 py-3 text-[18px] xl:text-[22px] text-white font-semibold rounded-2xl hover:bg-[#4A6D88] transition-all shadow-xl hover:-translate-y-1"
+            className="inline-flex items-center justify-center bg-brand-blue px-20 py-4 md:px-20 md:py-4 text-[18px] xl:text-[22px] text-white font-semibold rounded-2xl hover:bg-brand-blue-deep transition-all shadow-xl hover:-translate-y-1 md:max-w-[300px]"
           >
             Cere ofertă
           </a>

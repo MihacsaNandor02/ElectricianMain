@@ -26,7 +26,7 @@ export default function ServiceArea() {
                   Ajung rapid la tine în tot județul Mureș!
                 </h2>
                 <p className="text-white/90 text-lg mb-8 font-medium">
-                  Mă aflu mereu pe teren în județul Mureș. Indiferent de locație, sunt pregătit să intervin rapid pentru orice urgență electrică.
+                  Indiferent de locație, sunt pregătit să intervin rapid pentru orice urgență electrică.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">

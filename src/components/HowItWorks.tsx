@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-white border-t border-slate-100 mt-12">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-[32px] sm:text-[40px] font-bold text-brand-dark mb-4">
@@ -36,14 +36,14 @@ export default function HowItWorks() {
             <div key={index} className="relative flex flex-col items-center text-center group">
               {/* Arrow Connector (Desktop) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-1/2 w-full z-0 translate-x-12">
+                <div className="hidden md:block absolute top-10 left-1/2 w-full z-0 translate-x-12">
                   <div className="w-full flex justify-center">
                     <Icons.ArrowRight size={32} className="text-brand-blue/20" />
                   </div>
                 </div>
               )}
 
-              <div className="w-20 h-20 rounded-full bg-brand-blue text-white flex items-center justify-center mb-8 shadow-xl z-10 transition-transform group-hover:scale-110">
+              <div className="w-20 h-20 rounded-full bg-brand-yellow text-white flex items-center justify-center mb-8 shadow-lg z-10 transition-transform group-hover:scale-110">
                 <step.icon size={32} strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-semibold text-brand-dark mb-4 text-[22px] sm:text-[30px]">{step.title}</h3>

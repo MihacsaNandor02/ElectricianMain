@@ -18,8 +18,8 @@ export default function Footer() {
               Servicii profesionale de electrician, autorizat ANRE, servind Târgu Mureș și împrejurimi din 2010. Calitate și siguranță garantată.
             </p>
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-sm">
-               <ShieldCheck size={18} className="text-brand-yellow" />
-               <span className="font-bold">Autorizație ANRE Nr. 123456</span>
+              <ShieldCheck size={18} className="text-brand-yellow" />
+              <span className="font-bold">Autorizație ANRE Nr. 123456</span>
             </div>
           </div>
 
@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <h3 className="text-[18px] font-bold mb-6">Servicii Principale</h3>
             <ul className="space-y-4">
-               <li><Link href="/services/urgente-electrice" className="text-brand-yellow hover:underline font-bold text-[15px]">Urgențe Electrice 24/7</Link></li>
+              <li><Link href="/services/urgente-electrice" className="text-brand-yellow hover:underline font-bold text-[15px]">Urgențe Electrice 24/7</Link></li>
               {SERVICES.filter(s => s.slug !== 'urgente-electrice').slice(0, 4).map((service) => (
                 <li key={service.slug}>
                   <Link href={`/services/${service.slug}`} className="text-[#a1a1aa] hover:text-white text-[15px] transition-colors">
@@ -43,15 +43,15 @@ export default function Footer() {
             <h3 className="text-[18px] font-bold mb-6">Contact & Locație</h3>
             <ul className="space-y-6">
               <li className="flex gap-4 text-[15px] text-[#a1a1aa]">
-                <Phone size={20} className="text-brand-blue shrink-0" /> 
+                <Phone size={20} className="text-brand-blue shrink-0" />
                 <span className="font-bold text-white">{BRAND.phone}</span>
               </li>
               <li className="flex gap-4 text-[15px] text-[#a1a1aa]">
                 <Mail size={20} className="text-brand-blue shrink-0" /> {BRAND.email}
               </li>
               <li className="flex gap-4 text-[15px] text-[#a1a1aa]">
-                <MapPin size={20} className="text-brand-blue shrink-0" /> 
-                <span>{BRAND.name}<br/>{BRAND.address}</span>
+                <MapPin size={20} className="text-brand-blue shrink-0" />
+                <span>{BRAND.name}<br />{BRAND.address}</span>
               </li>
             </ul>
           </div>
@@ -70,7 +70,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="pt-4">
-               <ul className="space-y-2">
+              <ul className="space-y-2">
                 <li><Link href="/politica-de-confidentialitate" className="text-[#a1a1aa] hover:text-white text-[13px] transition-colors">Politică de Confidențialitate</Link></li>
                 <li><Link href="/termeni-si-conditii" className="text-[#a1a1aa] hover:text-white text-[13px] transition-colors">Termeni și Condiții</Link></li>
               </ul>
@@ -83,9 +83,9 @@ export default function Footer() {
             &copy; {currentYear} {BRAND.name}. Toate drepturile rezervate. Lucrări executate conform normativelor I7/2011.
           </p>
           <div className="flex gap-4 opacity-50">
-             {/* Fallback text if images are missing */}
-             <span className="text-[10px] border border-white/20 px-2 py-1 rounded">ANPC</span>
-             <span className="text-[10px] border border-white/20 px-2 py-1 rounded">SOL</span>
+            {/* Fallback text if images are missing */}
+            <span className="text-[10px] border border-white/20 px-2 py-1 rounded">ANPC</span>
+            <span className="text-[10px] border border-white/20 px-2 py-1 rounded">SOL</span>
           </div>
         </div>
       </div>

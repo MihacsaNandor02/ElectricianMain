@@ -4,7 +4,7 @@ const triggers = [
   {
     icon: Star,
     text: "5.0 Google rating",
-    color: "text-yellow-400",
+    color: "text-brand-yellow",
   },
   {
     icon: ShieldCheck,
@@ -19,7 +19,7 @@ const triggers = [
   {
     icon: MapPin,
     text: "Local (Târgu Mureș + zone limitrofe)",
-    color: "text-red-500",
+    color: "text-brand-blue",
   },
 ];
 

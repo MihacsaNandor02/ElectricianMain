@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div className="flex flex-col justify-center items-center sm:flex-row  lg:justify-start gap-4 sm:gap-6 w-full lg:w-full mx-auto lg:mx-0 max-w-xs sm:max-w-xl lg:max-w-none lg:flex-nowrap">
                 <a
                   href={`tel:${BRAND.phoneRaw}`}
-                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#5D8AA8] px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white  rounded-2xl shadow-lg hover:bg-[#4A6D88] hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-2xl shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                 >
                   <Icons.Phone size={20} fill="currentColor" /> {BRAND.phone}
                 </a>
@@ -70,14 +70,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href={`https://wa.me/${BRAND.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-[#25D366] px-8 sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-2xl shadow-lg hover:opacity-90 hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                  className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8 sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-2xl shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                 >
                   <Icons.MessageCircle size={22} fill="currentColor" /> WhatsApp
                 </a>
               </div>
 
               <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-white/60 font-bold">
-                <Icons.Clock size={18} className="text-[#5D8AA8]" /> Răspundem în maxim {BRAND.responseTime}
+                <Icons.Clock size={18} className="text-brand-blue" /> Răspundem în maxim {BRAND.responseTime}
               </div>
             </div>
 
@@ -152,7 +152,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </div>
               <a
                 href="#contact"
-                className="mt-8 inline-flex items-center gap-3 bg-[#15803d] text-white px-8 py-4 rounded-2xl font-black text-lg shadow-[0_0_20px_rgba(21,128,61,0.3)] hover:bg-[#166534] transition-all hover:-translate-y-1 group"
+                className="mt-8 inline-flex items-center gap-3 bg-brand-blue text-white px-8 py-4 rounded-2xl font-black text-lg shadow-lg hover:bg-brand-blue-deep transition-all hover:-translate-y-1 group"
               >
                 <Icons.Zap size={22} className="group-hover:scale-110 transition-transform" fill="currentColor" />
                 <span>Solicită intervenție rapidă</span>
@@ -197,7 +197,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <div className="mt-10 flex justify-center w-full">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-3 bg-[#22c55e] px-12 py-3 text-[18px] lg:text-[22px] text-white font-semibold rounded-2xl shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:bg-[#16a34a] hover:-translate-y-1 transition-all"
+                className="inline-flex items-center justify-center gap-3 bg-brand-blue px-12 py-3 text-[18px] lg:text-[22px] text-white font-black rounded-2xl shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all"
               >
                 Cere Ofertă
               </a>

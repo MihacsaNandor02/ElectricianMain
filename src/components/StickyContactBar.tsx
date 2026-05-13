@@ -10,7 +10,7 @@ export default function StickyContactBar() {
       <div className="flex gap-3 max-w-md mx-auto">
         <a
           href={`tel:${BRAND.phoneRaw}`}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#5D8AA8] text-white py-3.5 rounded-xl font-black text-[16px] shadow-lg active:scale-95 transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 bg-brand-blue text-white py-3.5 rounded-xl font-black text-[16px] shadow-lg active:scale-95 transition-transform"
         >
           <Phone size={20} fill="currentColor" />
           Suna
@@ -19,7 +19,7 @@ export default function StickyContactBar() {
           href={`https://wa.me/${BRAND.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3.5 rounded-xl font-black text-[16px] shadow-lg active:scale-95 transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 bg-brand-whatsapp text-white py-3.5 rounded-xl font-black text-[16px] shadow-lg active:scale-95 transition-transform"
         >
           <MessageCircle size={20} fill="currentColor" />
           WhatsApp

@@ -1,12 +1,37 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand-blue: #5F9EA0;
-  --color-brand-yellow: #F89D1F;
-  --color-brand-yellow-hover: #EEA302;
-  --color-brand-dark: #000000;
-  --color-brand-gray: #EFEFEF;
-  --color-brand-footer: #1A1B1F;
+  /* Semantic Variables - Bright Sky Blues */
+  --color-brand-primary: #B4CCCF;
+  /* Sky Royal (High Energy) */
+  --color-brand-secondary: #70C5ff;
+  /* Smooth Royal */
+  --color-brand-accent: #F59E0B;
+  /* Vibrant Amber */
+  --color-brand-accent-hover: #D97706;
+  /* Amber Hover */
+  --color-brand-text: #FFFFFF;
+  --color-brand-text-dark: #0F172A;
+  --color-brand-text-muted: #EFF6FF;
+  /* Very Light Blue Muted Text */
+  --color-brand-border: #93C5FD;
+  /* Soft Blue Border */
+  --color-brand-surface: #2563EB;
+  /* Surface Light Navy */
+  --color-brand-muted: #F8FAFC;
+  /* Light Muted (Silver/Cloud) */
+  --color-brand-muted-dark: #0F172A;
+  /* Dark Muted (Slate) */
+
+  /* Legacy Aliases (Updated to match) */
+  --color-brand-blue: #5292DA;
+  --color-brand-blue-deep: #70C5ff;
+  --color-brand-yellow: #F59E0B;
+  --color-brand-yellow-hover: #D97706;
+  --color-brand-whatsapp: #25D366;
+  --color-brand-whatsapp-hover: #128C7E;
+  --color-brand-dark: #0F172A;
+  --color-brand-gray: #F8FAFC;
 
   --font-outfit: var(--font-outfit);
   --font-source-sans: var(--font-source-sans-pro);
@@ -26,11 +51,9 @@ body {
   -ms-text-size-adjust: 100% !important;
 }
 
-
-
 @layer base {
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
   }
 
   h1,
