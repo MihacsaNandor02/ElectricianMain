@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { Phone, MessageCircle, Clock, Star, Quote } from 'lucide-react';
 import { BRAND } from '@/lib/constants';
 
@@ -25,29 +25,38 @@ export default function Hero() {
             <div className="flex flex-col justify-center items-center sm:flex-row  lg:justify-start gap-4 sm:gap-6 w-full lg:w-full mx-auto lg:mx-0 max-w-xs sm:max-w-xl lg:max-w-none lg:flex-nowrap">
               <a
                 href={`tel:${BRAND.phoneRaw}`}
-                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-2xl shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-lg shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
               >
                 <Phone size={20} fill="currentColor" /> {BRAND.phone}
               </a>
               <a
-                href={`https://wa.me/${BRAND.whatsapp}`}
+                href={BRAND.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8 sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-2xl shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8 sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-lg shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
               >
                 <MessageCircle size={22} fill="currentColor" /> WhatsApp
               </a>
             </div>
 
-            <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-white/60 font-bold">
-              <Clock size={18} className="text-brand-blue" /> Răspundem în maxim 10 minute
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
+              <div className="flex items-center gap-1.5 bg-green-500/10 px-4 py-2 rounded-full border border-green-500/20 w-fit">
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </div>
+                <span className="text-[12px] font-bold text-green-400 uppercase tracking-widest">Disponibil Acum</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/80 font-bold">
+                <Clock size={18} className="text-brand-blue" /> Răspundem în maxim {BRAND.responseTime}
+              </div>
             </div>
           </div>
 
           {/* Right Side: Trust Card */}
           <div className="relative mt-8 lg:mt-0 max-w-lg mx-auto lg:ml-auto lg:mr-0">
-            <div className="absolute -inset-4 bg-brand-yellow/20 rounded-[40px] blur-3xl opacity-30 animate-pulse"></div>
-            <div className="relative bg-white/5 border border-white/10 p-8 pt-10 sm:p-10 sm:pt-12 rounded-[32px] backdrop-blur-md shadow-2xl flex flex-col items-center text-center">
+            <div className="absolute -inset-4 bg-brand-yellow/20 rounded-xl blur-3xl opacity-30 animate-pulse"></div>
+            <div className="relative bg-white/5 border border-white/10 p-8 pt-10 sm:p-10 sm:pt-12 rounded-xl backdrop-blur-md shadow-2xl flex flex-col items-center text-center">
 
               {/* Google Logo */}
               <div className="absolute top-6 left-6">

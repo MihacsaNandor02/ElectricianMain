@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import * as Icons from 'lucide-react';
 import { PhoneCall, Search, CheckCircle } from 'lucide-react';
@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white lg:mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-[32px] sm:text-[40px] font-bold text-brand-dark mb-4">

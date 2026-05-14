@@ -6,6 +6,7 @@ import { Send } from 'lucide-react';
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(1);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +37,7 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${step === 2 ? 'hidden sm:grid' : 'grid'}`}>
             <div>
               <label htmlFor="first-name" className="block text-[15px] font-bold text-brand-dark">
                 Prenume
@@ -47,7 +48,7 @@ export default function ContactForm() {
                 id="first-name"
                 required
                 placeholder="Ex: Ioan"
-                className="mt-2 block w-full rounded-[10px] border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
+                className="mt-2 block w-full rounded-md border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
               />
             </div>
             <div>
@@ -60,11 +61,11 @@ export default function ContactForm() {
                 id="last-name"
                 required
                 placeholder="Ex: Popescu"
-                className="mt-2 block w-full rounded-[10px] border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
+                className="mt-2 block w-full rounded-md border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
               />
             </div>
           </div>
-          <div>
+          <div className={step === 2 ? 'hidden sm:block' : 'block'}>
             <label htmlFor="phone" className="block text-[15px] font-bold text-brand-dark">
               Număr de telefon
             </label>
@@ -74,17 +75,17 @@ export default function ContactForm() {
               id="phone"
               required
               placeholder="07XX XXX XXX"
-              className="mt-2 block w-full rounded-[10px] border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
+              className="mt-2 block w-full rounded-md border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
             />
           </div>
-          <div>
+          <div className={step === 1 ? 'hidden sm:block' : 'block'}>
             <label htmlFor="service" className="block text-[15px] font-bold text-brand-dark">
               Serviciul dorit
             </label>
             <select
               id="service"
               name="service"
-              className="mt-2 block w-full rounded-[10px] border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-white"
+              className="mt-2 block w-full rounded-md border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-white"
             >
               <option>Reparații generale</option>
               <option>Modernizare tablou electric</option>
@@ -95,7 +96,7 @@ export default function ContactForm() {
               <option>Altul</option>
             </select>
           </div>
-          <div>
+          <div className={step === 1 ? 'hidden sm:block' : 'block'}>
             <label htmlFor="message" className="block text-[15px] font-bold text-brand-dark">
               Povestește-ne puțin despre proiect
             </label>
@@ -104,13 +105,24 @@ export default function ContactForm() {
               id="message"
               rows={4}
               placeholder="Descrie pe scurt problema sau lucrarea necesară..."
-              className="mt-2 block w-full rounded-[10px] border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
+              className="mt-2 block w-full rounded-md border-slate-300 px-4 py-3 text-brand-dark focus:border-brand-blue focus:ring-1 focus:ring-brand-blue text-[16px] shadow-sm bg-brand-gray/30"
             ></textarea>
           </div>
+
+          {step === 1 && (
+            <button
+              type="button"
+              onClick={() => setStep(2)}
+              className="w-full bg-brand-blue hover:bg-brand-blue-deep text-white py-4 rounded-lg text-[18px] font-black shadow-md hover:-translate-y-1 transition-all cursor-pointer block sm:hidden"
+            >
+              Următorul Pas
+            </button>
+          )}
+
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn bg-brand-blue px-8 py-4 text-[18px] text-brand-dark font-black shadow-md hover:bg-brand-blue-deep transition-all disabled:opacity-50 mt-4 rounded-2xl"
+            className={`w-full btn bg-brand-blue px-8 py-4 text-[18px] text-white font-black shadow-md hover:bg-brand-blue-deep transition-all disabled:opacity-50 mt-4 rounded-lg ${step === 1 ? 'hidden sm:block' : 'block'}`}
           >
             {isSubmitting ? 'Se procesează...' : 'Solicită ofertă gratuită'}
           </button>

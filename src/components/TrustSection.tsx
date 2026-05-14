@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { ShieldCheck, Zap, Banknote, Hammer, Star, Quote } from 'lucide-react';
 
@@ -41,7 +41,7 @@ const reviews = [
   {
     name: "Adriana Marian",
     role: "Apartament Târgu Mureș",
-    text: "Recomand cu încredere! Profesionist! 👨‍🔧💡⚡",
+    text: "Recomand cu încredere! Profesionist! ðŸ‘¨â€ðŸ”§ðŸ’¡âš¡",
     rating: 5,
   },
 ];
@@ -60,7 +60,7 @@ export default function TrustSection() {
             <div className="grid grid-cols-1 gap-y-10">
               {benefits.map((benefit) => (
                 <div key={benefit.title} className="flex gap-5 group">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                     <benefit.icon size={28} strokeWidth={1.5} />
                   </div>
                   <div>
@@ -85,7 +85,7 @@ export default function TrustSection() {
               {reviews.map((review, index) => (
                 <div
                   key={index}
-                  className={`bg-white p-6 rounded-[20px] shadow-sm border border-slate-100 transition-all hover:shadow-md ${index === 1 ? 'lg:translate-x-6' : ''
+                  className={`bg-white p-6 rounded-lg shadow-sm border border-slate-100 transition-all hover:shadow-md ${index === 1 ? 'lg:translate-x-6' : ''
                     }`}
                 >
                   <div className="flex gap-1 text-brand-yellow mb-3">

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { BRAND } from '@/lib/constants';
 
 const projects = [
@@ -5,72 +8,69 @@ const projects = [
     title: "Instalație electrică apartament",
     location: "Târgu Mureș",
     type: "Rezidențial",
-    image: "/images/services/instalatii-electrice.png",
+    imageBefore: "/images/services/tablou-electric.jpg", // placeholder for before
+    imageAfter: "/images/services/instalatii-electrice.png",
   },
   {
-    title: "Reparație tablou electric",
+    title: "Modernizare tablou electric",
     location: "Târgu Mureș",
     type: "Reparație",
-    image: "/images/services/tablou-electric.jpg",
+    imageBefore: "/images/services/urgente-electrice.jpg",
+    imageAfter: "/images/services/tablou-electric.jpg",
   },
   {
-    title: "Intervenție urgență",
-    location: "Târgu Mureș",
-    type: "Urgență",
-    image: "/images/services/urgente-electrice.jpg",
-  },
-  {
-    title: "Iluminat LED modern",
+    title: "Iluminat LED arhitectural",
     location: "Târgu Mureș",
     type: "Design",
-    image: "/images/services/iluminat.png",
+    imageBefore: "/images/services/instalatii-electrice.png",
+    imageAfter: "/images/services/iluminat.png",
   },
 ];
 
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-12 sm:py-20 bg-brand-gray/30">
+    <section id="portfolio" className="py-12 sm:py-24 bg-brand-gray/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-[36px] font-bold tracking-tight text-brand-dark sm:text-[45px]">
-            Proiecte recente
+            Proiectele noastre înainte și după
           </h2>
-          <p className="mt-4 text-slate-600 text-lg">
-            Rezultate reale pentru clienții noștri din județul Mureș.
+          <p className="mt-4 text-slate-600 text-[18px] sm:text-[20px] max-w-2xl mx-auto font-medium">
+            De la instalații periculoase la tablouri electrice sigure și moderne. Glisați pentru a vedea diferența.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group max-w-sm sm:max-w-none w-full relative bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col mx-auto"
+              className="w-full relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col mx-auto border border-slate-100"
             >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={`${project.title} – ${project.location}`}
-                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <div className="text-white">
-                    <div className="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-1">{project.type}</div>
-                    <div className="text-lg font-bold leading-tight">{project.title}</div>
-                    <div className="text-sm opacity-80">{project.location}</div>
-                  </div>
-                </div>
-              </div>
+              <BeforeAfterSlider
+                before={project.imageBefore}
+                after={project.imageAfter}
+                alt={`${project.title} – ${project.location}`}
+              />
 
-              <div className="p-6">
+              <div className="p-6 sm:p-8">
                 <div className="text-xs font-bold text-brand-blue uppercase tracking-widest mb-2">{project.type}</div>
-                <h3 className="text-xl font-bold text-brand-dark mb-1">{project.title}</h3>
-                <p className="text-sm text-slate-500">{project.location}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-brand-dark mb-1">{project.title}</h3>
+                <p className="text-sm text-slate-500 font-medium">{project.location}</p>
               </div>
             </div>
           ))}
         </div>
 
-
+        <div className="mt-16 text-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center bg-brand-blue px-12 py-4 text-[18px] text-white font-bold rounded-lg hover:bg-brand-blue-deep transition-all shadow-xl hover:-translate-y-1"
+          >
+            Solicită o estimare pentru proiectul tău
+          </a>
+        </div>
       </div>
     </section>
   );

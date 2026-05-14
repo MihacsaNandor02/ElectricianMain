@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import * as Icons from 'lucide-react';
 import { SERVICES, BRAND } from '@/lib/constants';
 
@@ -36,8 +36,8 @@ export default function ServicesPage() {
             {SERVICES.map((service) => {
               const Icon = IconMap[service.icon] || Icons.Zap;
               return (
-                <div key={service.slug} className="flex flex-col rounded-3xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-2xl hover:bg-white hover:border-blue-500/20 group">
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/20">
+                <div key={service.slug} className="flex flex-col rounded-xl border border-slate-100 bg-slate-50 p-8 transition-all hover:shadow-2xl hover:bg-white hover:border-blue-500/20 group">
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg shadow-blue-600/20">
                     <Icon size={28} />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h2>

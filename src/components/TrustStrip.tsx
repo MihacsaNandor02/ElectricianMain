@@ -1,4 +1,4 @@
-import { Star, ShieldCheck, Zap, MapPin } from 'lucide-react';
+﻿import { Star, ShieldCheck, Zap, MapPin } from 'lucide-react';
 
 const triggers = [
   {

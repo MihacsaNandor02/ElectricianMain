@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
@@ -16,7 +16,7 @@ export default function StickyContactBar() {
           Suna
         </a>
         <a
-          href={`https://wa.me/${BRAND.whatsapp}`}
+          href={BRAND.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-2 bg-brand-whatsapp text-white py-3.5 rounded-xl font-black text-[16px] shadow-lg active:scale-95 transition-transform"

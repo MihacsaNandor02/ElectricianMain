@@ -1,9 +1,10 @@
-import Hero from "@/components/Hero";
+﻿import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import StatsSection from "@/components/StatsSection";
 import HowItWorks from "@/components/HowItWorks";
 import Portfolio from "@/components/Portfolio";
 import ReviewsSection from "@/components/ReviewsSection";
+import CostCalculator from "@/components/CostCalculator";
 import ServiceArea from "@/components/ServiceArea";
 import FinalCTA from "@/components/FinalCTA";
 import TrustStrip from "@/components/TrustStrip";
@@ -22,6 +23,8 @@ export default function Home() {
       <StatsSection />
 
       <HowItWorks />
+
+      <CostCalculator />
 
       <ReviewsSection />
 

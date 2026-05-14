@@ -38,20 +38,20 @@ export default function ServicesGrid() {
               <Link
                 href={href}
                 key={service.title}
-                className={`group max-w-sm sm:max-w-md lg:max-w-none w-full relative rounded-[30px] transition-all duration-300 shadow-sm hover:shadow-xl border flex flex-col h-full mx-auto ${isUrgency
+                className={`group max-w-sm sm:max-w-md lg:max-w-none w-full relative rounded-lg transition-all duration-300 shadow-sm hover:shadow-xl border flex flex-col h-full mx-auto ${isUrgency
                   ? 'bg-brand-yellow text-brand-dark border-brand-yellow z-10'
                   : 'bg-white border-slate-100'
                   }`}
               >
                 {isUrgency && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand- text-white text-[13px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-xl whitespace-nowrap z-30">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-dark text-white text-[13px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-xl whitespace-nowrap z-30">
                     Intervenție Rapidă
                   </div>
                 )}
 
                 {/* Shorter Image section - 1/3 of height feel */}
                 {hasImage ? (
-                  <div className="relative w-full aspect-[16/7] overflow-hidden rounded-t-[30px]">
+                  <div className="relative w-full aspect-[16/7] overflow-hidden ">
                     <Image
                       src={service.image!}
                       alt={service.title}
@@ -64,8 +64,8 @@ export default function ServicesGrid() {
                       className="absolute inset-0"
                       style={{
                         background: isUrgency
-                          ? 'linear-gradient(to bottom, transparent 40%, #F59E0B 100%)'
-                          : 'linear-gradient(to bottom, transparent 40%, #ffffff 100%)',
+                          ? 'linear-gradient(to bottom, transparent 70%, #F59E0B 120%)'
+                          : 'linear-gradient(to bottom, transparent 70%, #ffffff 120%)',
                       }}
                     />
                   </div>
@@ -114,7 +114,7 @@ export default function ServicesGrid() {
         <div className="mt-16 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-brand-blue px-20 py-4 md:px-20 md:py-4 text-[18px] xl:text-[22px] text-white font-semibold rounded-2xl hover:bg-brand-blue-deep transition-all shadow-xl hover:-translate-y-1 md:max-w-[300px]"
+            className="inline-flex items-center justify-center bg-brand-blue px-20 py-4 md:px-20 md:py-4 text-[18px] xl:text-[22px] text-white font-semibold rounded-lg hover:bg-brand-blue-deep transition-all shadow-xl hover:-translate-y-1 md:max-w-[300px]"
           >
             Cere ofertă
           </a>

@@ -3,6 +3,7 @@ export const BRAND = {
   phone: "0754 571 752",
   phoneRaw: "0754571752",
   whatsapp: "40754571752",
+  whatsappUrl: "https://wa.me/40754571752?text=Bună%20ziua!%20Aș%20dori%20o%20programare%20pentru%20un%20serviciu%20electric.",
   email: "contact@electricgh.ro",
   serviceArea: "Târgu Mureș și împrejurimi",
   address: "Târgu Mureș, România",

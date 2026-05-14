@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 
@@ -27,7 +27,7 @@ const gridReviews = [
     name: "Adriana Marian",
     rating: 5,
     jobType: "Instalație Electrică",
-    text: "Recomand cu încredere! Profesionist! 👨‍🔧💡⚡",
+    text: "Recomand cu încredere! Profesionist! ðŸ‘¨â€ðŸ”§ðŸ’¡âš¡",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function ReviewsSection() {
 
         {/* Hero Review */}
         {/*<div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-brand-gray/30 p-8 sm:p-12 rounded-[30px] relative border border-brand-blue/10">
+          <div className="bg-brand-gray/30 p-8 sm:p-12 rounded-xl relative border border-brand-blue/10">
             <Quote size={60} className="absolute top-6 left-6 text-brand-blue/10 -z-0" />
             <div className="relative z-10">
               <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -77,7 +77,7 @@ export default function ReviewsSection() {
         {/* Grid Reviews */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {gridReviews.map((review, index) => (
-            <div key={index} className="bg-white p-8 pt-10 rounded-[20px] shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative flex flex-col items-center text-center">
+            <div key={index} className="bg-white p-8 pt-10 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative flex flex-col items-center text-center">
               {/* Google Logo */}
               <div className="absolute top-6 left-6">
                 <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">

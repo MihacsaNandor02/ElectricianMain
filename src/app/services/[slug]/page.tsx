@@ -5,6 +5,8 @@ import { SERVICES, BRAND } from '@/lib/constants';
 import FinalCTA from '@/components/FinalCTA';
 import ServiceArea from '@/components/ServiceArea';
 import TrustStrip from '@/components/TrustStrip';
+import CostCalculator from '@/components/CostCalculator';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -67,7 +69,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <Icons.Phone size={20} fill="currentColor" /> {BRAND.phone}
                 </a>
                 <a
-                  href={`https://wa.me/${BRAND.whatsapp}`}
+                  href={BRAND.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8 sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white font-black rounded-2xl shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
@@ -76,8 +78,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 </a>
               </div>
 
-              <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-white/60 font-bold">
-                <Icons.Clock size={18} className="text-brand-blue" /> Răspundem în maxim {BRAND.responseTime}
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
+                <div className="flex items-center gap-1.5 bg-green-500/10 px-4 py-2 rounded-full border border-green-500/20 w-fit">
+                  <div className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                  </div>
+                  <span className="text-[12px] font-bold text-green-400 uppercase tracking-widest">Disponibil Acum</span>
+                </div>
+                <div className="flex items-center gap-2 text-white/80 font-bold">
+                  <Icons.Clock size={18} className="text-brand-blue" /> Răspundem în maxim {BRAND.responseTime}
+                </div>
               </div>
             </div>
 
@@ -130,6 +141,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Quick Estimate WhatsApp Banner */}
+      <section className="bg-brand-yellow py-5 border-b border-brand-yellow/50 shadow-md relative z-20">
+        <div className="container mx-auto px-4 text-center">
+          <a
+            href={BRAND.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 text-[18px] sm:text-[22px] font-black text-brand-dark hover:text-brand-blue transition-colors group"
+          >
+            <Icons.Camera size={26} className="group-hover:scale-110 transition-transform" />
+            Trimite o poză pe WhatsApp pentru o estimare rapidă
+            <Icons.ArrowRight size={20} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+          </a>
+        </div>
+      </section>
 
       <TrustStrip />
 
@@ -159,24 +185,25 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               </a>
             </div>
 
-            {/* 3. Solution section (what you actually do) */}
-            <div className="w-full h-full min-h-[400px] rounded-[40px] shadow-2xl relative overflow-hidden group flex items-end">
-              {/* Background Image of the Service */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url(${service.image})` }}
-              />
-              {/* Dark Gradient Overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent"></div>
-
-              {/* Solution Content */}
-              <div className="relative z-10 p-8 sm:p-12 w-full">
-                <div className="inline-flex items-center gap-2 bg-brand-yellow text-brand-dark px-4 py-2 rounded-full font-black uppercase tracking-widest text-sm mb-6 shadow-lg">
-                  <Icons.CheckCircle2 size={18} /> Soluția Noastră
+            {/* 3. Solution section with Before/After Slider */}
+            <div className="flex flex-col w-full h-full justify-center space-y-6">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+                <div className="p-6 bg-brand-dark text-white">
+                  <div className="inline-flex items-center gap-2 bg-brand-yellow text-brand-dark px-4 py-2 rounded-full font-black uppercase tracking-widest text-[12px] mb-4 shadow-lg">
+                    <Icons.CheckCircle2 size={16} /> Soluția Noastră
+                  </div>
+                  <p className="text-[20px] font-bold leading-snug text-white italic">
+                    „{service.solution}”
+                  </p>
                 </div>
-                <p className="text-[22px] sm:text-[28px] font-bold leading-snug text-white">
-                  „{service.solution}”
-                </p>
+                <div className="p-2">
+                  {/* Generic messy panel for 'before', service specific image for 'after' */}
+                  <BeforeAfterSlider 
+                    before="/images/services/tablou-electric.jpg" 
+                    after={service.image || '/images/hero-bg.jpg'} 
+                    alt={service.title} 
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -254,6 +281,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Cost Calculator Section */}
+      <CostCalculator />
+
       {/* 5. How it works (ULTRA SHORT) */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
@@ -281,7 +311,38 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* 6. Service area (light SEO + trust) */}
       <ServiceArea />
 
-
+      {/* FAQ Section */}
+      <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-[32px] md:text-[40px] font-bold text-center text-brand-dark mb-12">Întrebări Frecvente</h2>
+          <div className="space-y-6">
+            <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-100 shadow-sm">
+              <h3 className="text-xl font-bold text-brand-dark mb-3 flex items-center gap-3">
+                <Icons.Clock className="text-brand-yellow" size={24}/> Cât durează o intervenție?
+              </h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Majoritatea intervențiilor sunt soluționate în 1-2 ore de la sosirea la locație, în funcție de complexitatea problemei. Pentru urgențe, ajungem la dumneavoastră în medie în 30 de minute.
+              </p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-100 shadow-sm">
+              <h3 className="text-xl font-bold text-brand-dark mb-3 flex items-center gap-3">
+                <Icons.ShieldCheck className="text-brand-yellow" size={24}/> Oferiți factură și garanție?
+              </h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Da! Pentru absolut toate lucrările executate emitem factură fiscală și oferim garanție legală atât pentru execuție, cât și pentru materialele folosite, fiind o echipă de electricieni autorizați ANRE.
+              </p>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-xl border border-slate-100 shadow-sm">
+              <h3 className="text-xl font-bold text-brand-dark mb-3 flex items-center gap-3">
+                <Icons.Calendar className="text-brand-yellow" size={24}/> Veniți și în weekend?
+              </h3>
+              <p className="text-slate-600 font-medium leading-relaxed">
+                Da, oferim asistență 24/7 pentru urgențe electrice. Intervenim inclusiv sâmbăta, duminica și în zilele de sărbătoare legală pentru a ne asigura că siguranța dumneavoastră nu este compromisă.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 8. Final CTA (CLOSER) */}
       <FinalCTA />

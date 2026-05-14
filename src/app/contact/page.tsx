@@ -1,4 +1,4 @@
-import FinalCTA from '@/components/FinalCTA';
+﻿import FinalCTA from '@/components/FinalCTA';
 import { BRAND } from '@/lib/constants';
 
 export const metadata = {
@@ -6,9 +6,32 @@ export const metadata = {
   description: `Contactează GH Electric pentru următorul tău proiect. Oferim servicii electrice profesionale în Târgu Mureș și împrejurimi.`,
 };
 
+const faqs = [
+  { q: "Cât de repede puteți veni?", a: "Pentru urgențe electrice, oferim suport 24/7. Pentru devize standard și lucrări programate, stabilim de obicei o vizită în 24-48 de ore." },
+  { q: "Devizele sunt gratuite?", a: "Da, oferim evaluări și devize gratuite pentru toate proiectele rezidențiale din județul Mureș." },
+  { q: "Vă ocupați de autorizații?", a: "Absolut. Ne ocupăm de toate autorizațiile, dosarele de instalație și inspecțiile electrice necesare conform normelor ANRE." }
+];
+
 export default function ContactPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Header */}
       <section className="bg-brand-gray py-24 border-b border-slate-200">
         <div className="container mx-auto px-4 text-center">
@@ -27,12 +50,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-[40px] font-bold text-brand-dark mb-12 text-center">Întrebări frecvente</h2>
           <div className="grid gap-6">
-             {[
-               { q: "Cât de repede puteți veni?", a: "Pentru urgențe electrice, oferim suport 24/7. Pentru devize standard și lucrări programate, stabilim de obicei o vizită în 24-48 de ore." },
-               { q: "Devizele sunt gratuite?", a: "Da, oferim evaluări și devize gratuite pentru toate proiectele rezidențiale din județul Mureș." },
-               { q: "Vă ocupați de autorizații?", a: "Absolut. Ne ocupăm de toate autorizațiile, dosarele de instalație și inspecțiile electrice necesare conform normelor ANRE." }
-             ].map((item, i) => (
-               <div key={i} className="bg-white p-8 rounded-[20px] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+             {faqs.map((item, i) => (
+               <div key={i} className="bg-white p-8 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                  <h4 className="font-bold text-[20px] text-brand-dark mb-3">{item.q}</h4>
                  <p className="text-[16px] text-slate-600 leading-relaxed">{item.a}</p>
                </div>

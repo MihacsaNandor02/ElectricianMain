@@ -1,4 +1,4 @@
-import { CheckCircle2, ShieldCheck, Trophy, Users, Star } from 'lucide-react';
+﻿import { CheckCircle2, ShieldCheck, Trophy, Users, Star } from 'lucide-react';
 import { BRAND } from '@/lib/constants';
 import FinalCTA from '@/components/FinalCTA';
 
@@ -58,8 +58,8 @@ export default function AboutPage() {
                 { title: 'Lucru curat', desc: 'Respectăm locuința ta și lăsăm casa exact așa cum am găsit-o.' },
                 { title: 'Intervenții rapide', desc: 'Prioritizăm întotdeauna apelurile de urgență pentru siguranța ta.' }
               ].map((value, idx) => (
-                <div key={idx} className="bg-brand-gray p-8 rounded-[20px] border border-slate-200 hover:shadow-md transition-shadow">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-brand-blue mb-6">
+                <div key={idx} className="bg-brand-gray p-8 rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-brand-blue mb-6">
                     <CheckCircle2 size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-[22px] font-bold text-brand-dark mb-3">{value.title}</h3>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -46,9 +46,18 @@ export default function Navbar() {
 
           {/* Desktop Info & CTAs */}
           <div className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
-              <Clock size={18} className="text-brand-blue" />
-              <span>Răspundem în <span className="text-brand-dark font-bold">{BRAND.responseTime}</span></span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-full border border-green-100">
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </div>
+                <span className="text-[11px] font-bold text-green-700 uppercase tracking-wide">Disponibil Acum</span>
+              </div>
+              <div className="hidden xl:flex items-center gap-2 text-sm font-medium text-slate-600">
+                <Clock size={18} className="text-brand-blue" />
+                <span>Răspundem în <span className="text-brand-dark font-bold">{BRAND.responseTime}</span></span>
+              </div>
             </div>
 
             <a href={`tel:${BRAND.phoneRaw}`} className="flex items-center gap-2 text-lg font-bold text-brand-dark hover:text-brand-blue transition-colors">
@@ -65,7 +74,7 @@ export default function Navbar() {
                 <span className="relative z-10">Programare rapidă</span>
               </Link>
               <a
-                href={`https://wa.me/${BRAND.whatsapp}`}
+                href={BRAND.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-whatsapp text-white hover:opacity-90 transition-opacity shadow-sm"
@@ -152,6 +161,13 @@ export default function Navbar() {
         {/* Mobile Menu Content */}
         <div className="p-6 space-y-8 bg-white overflow-y-auto flex-1 pb-32">
           <div className="flex flex-col gap-4 border-b border-slate-100 pb-6">
+            <div className="flex items-center gap-1.5 bg-green-50 px-3 py-1.5 rounded-full border border-green-100 w-fit">
+              <div className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              </div>
+              <span className="text-[11px] font-bold text-green-700 uppercase tracking-wide">Disponibil Acum</span>
+            </div>
             <div className="flex items-center gap-3 text-slate-600">
               <Clock size={20} className="text-brand-blue" />
               <span>Răspundem în <span className="font-bold">{BRAND.responseTime}</span></span>
@@ -169,7 +185,7 @@ export default function Navbar() {
                 Programare rapidă
               </Link>
               <a
-                href={`https://wa.me/${BRAND.whatsapp}`}
+                href={BRAND.whatsappUrl}
                 className="flex items-center justify-center w-12 h-12 rounded-lg bg-brand-whatsapp text-white shadow-md"
               >
                 <MessageCircle size={28} fill="currentColor" />

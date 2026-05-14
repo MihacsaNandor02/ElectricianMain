@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { Phone, MessageCircle, Clock, MapPin, Mail, Calendar, CheckCircle2 } from 'lucide-react';
 import { BRAND, SERVICE_AREAS } from '@/lib/constants';
 
 export default function FinalCTA() {
+  const [step, setStep] = useState(1);
+
   return (
     <section id="contact" className="py-12 sm:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-0 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start bg-brand-gray/30 rounded-[40px] p-8 sm:p-12 lg:p-16 lg:px-12 border border-slate-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start bg-brand-gray/30 rounded-lg p-8 sm:p-12 lg:p-16 lg:px-12 border border-slate-100">
 
             {/* Left Column: Info & Service Areas */}
             <div className="space-y-12">
@@ -40,15 +43,15 @@ export default function FinalCTA() {
                 <div className="flex flex-col items-center sm:items-stretch sm:flex-row gap-4 pt-4">
                   <a
                     href={`tel:${BRAND.phoneRaw}`}
-                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-2xl shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-blue px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-lg shadow-lg hover:bg-brand-blue-deep hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                   >
                     <Phone size={20} fill="currentColor" /> {BRAND.phone}
                   </a>
                   <a
-                    href={`https://wa.me/${BRAND.whatsapp}`}
+                    href={BRAND.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-2xl shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
+                    className="flex flex-1 font-semibold w-full items-center justify-center gap-3 bg-brand-whatsapp px-8  sm:px-10 lg:px-6 xl:px-10 py-4 sm:py-5 lg:py-4 xl:py-5 text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] whitespace-nowrap text-white rounded-lg shadow-lg hover:bg-brand-whatsapp-hover hover:-translate-y-1 transition-all max-w-[250px] sm:max-w-none"
                   >
                     <MessageCircle size={22} fill="currentColor" /> WhatsApp
                   </a>
@@ -70,12 +73,12 @@ export default function FinalCTA() {
             </div>
 
             {/* Right: Detailed Form */}
-            <div className="bg-transparent pt-8 sm:p-10 lg:p-0 rounded-[32px]">
+            <div className="bg-transparent pt-8 sm:p-10 lg:p-0 rounded-lg">
               <h3 className="text-[36px] sm:text-[48px] font-semibold text-brand-dark mb-6 text-center leading-tight">
                 Solicitați Ofertă Gratuită
               </h3>
 
-              <div className="mb-8 grid grid-cols-2 gap-4 bg-white/50 border border-slate-100 rounded-2xl p-6 shadow-sm">
+              <div className="mb-8 grid grid-cols-2 gap-4 bg-white/50 border border-slate-100 rounded-lg p-6 shadow-sm">
                 <div className="text-center border-r border-slate-100">
                   <div className="text-[20px] sm:text-[32px] font-bold text-brand-blue leading-none mb-1">
                     &lt;60 min
@@ -91,14 +94,14 @@ export default function FinalCTA() {
               </div>
 
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${step === 2 ? 'hidden sm:grid' : 'grid'}`}>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">Nume <span className="text-red-500">*</span></label>
                     <input
                       required
                       type="text"
                       placeholder="Ex: Popescu Ioan"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
+                      className="w-full px-5 py-4 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
                     />
                   </div>
                   <div>
@@ -107,15 +110,15 @@ export default function FinalCTA() {
                       required
                       type="tel"
                       placeholder="07XX XXX XXX"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
+                      className="w-full px-5 py-4 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
                     />
                   </div>
                 </div>
 
-                <div>
+                <div className={step === 1 ? 'hidden sm:block' : 'block'}>
                   <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">Serviciul dorit</label>
                   <select
-                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
+                    className="w-full px-5 py-4 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all"
                   >
                     <option>Reparații generale</option>
                     <option>Modernizare tablou electric</option>
@@ -127,25 +130,35 @@ export default function FinalCTA() {
                   </select>
                 </div>
 
-                <div>
+                <div className={step === 1 ? 'hidden sm:block' : 'block'}>
                   <label className="block text-sm font-bold text-slate-700 mb-2 ml-1">Descrierea solicitării</label>
                   <textarea
                     placeholder="Cum te putem ajuta?"
                     rows={4}
-                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all resize-none"
+                    className="w-full px-5 py-4 rounded-lg bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
-                <div className="flex items-start gap-2">
+                <div className={`items-start gap-2 ${step === 1 ? 'hidden sm:flex' : 'flex'}`}>
                   <CheckCircle2 size={16} className="text-brand-blue mt-1 shrink-0" />
                   <p className="text-[13px] text-slate-500 leading-relaxed font-medium ">
                     Acceptați să fiți contactat în legătură cu această solicitare. Estimarea este complet gratuită.
                   </p>
                 </div>
 
+                {step === 1 && (
+                  <button
+                    type="button"
+                    onClick={() => setStep(2)}
+                    className="w-full bg-brand-blue hover:bg-brand-blue-deep text-white py-4 rounded-lg text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all cursor-pointer block sm:hidden"
+                  >
+                    Următorul Pas
+                  </button>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-brand-blue hover:bg-brand-blue-deep text-white py-4 rounded-2xl text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all cursor-pointer"
+                  className={`w-full bg-brand-blue hover:bg-brand-blue-deep text-white py-4 rounded-lg text-base font-semibold uppercase tracking-wider shadow-lg hover:-translate-y-1 transition-all cursor-pointer ${step === 1 ? 'hidden sm:block' : 'block'}`}
                 >
                   Trimite Solicitarea
                 </button>
